@@ -1,9 +1,13 @@
 {
-  "name": "portfolio-website",
+  "name": "alex-rodriguez-portfolio",
   "version": "1.0.0",
-  "description": "Minimalist static portfolio website using HTML, Tailwind CSS, JS, Heroicons, and AOS.",
+  "description": "Minimalist data scientist portfolio website using HTML, Tailwind CSS, JS, Heroicons, and AOS. Showcasing Python, ML, and data analysis expertise.",
   "main": "index.html",
-  "scripts": {},
-  "author": "[Your Name]",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": ["portfolio", "data-science", "python", "machine-learning", "tailwind", "static-site"],
+  "author": "Alex Rodriguez",
   "license": "MIT"
 }
