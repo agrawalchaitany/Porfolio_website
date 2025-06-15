@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-inter bg-gray-100">
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-blue-700">My Portfolio</a>
+        <nav class="space-x-6">
+            <a href="about.html" class="hover:text-blue-600">About</a>
+            <a href="projects.html" class="text-blue-600 font-semibold">Projects</a>
+            <a href="contact.html" class="hover:text-blue-600">Contact</a>
+        </nav>
+    </header>
+    <main class="flex-1 container mx-auto px-4 py-16" data-aos="fade-up">
+        <h1 class="text-3xl font-bold mb-8 text-blue-700">Projects</h1>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow p-6 flex flex-col border border-blue-100" data-aos="fade-up">
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 text-blue-600 mr-2"><use href="#heroicon-o-code" /></svg>
+                    <h4 class="text-lg font-semibold">Project Title</h4>
+                </div>
+                <p class="text-gray-600 flex-1">Short description of the project goes here. Highlight the tech stack and your role.</p>
+                <a href="#" class="mt-4 text-blue-600 hover:underline">View Project</a>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </main>
+    <footer class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+        &copy; 2025 [Your Name]. All rights reserved.
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>
