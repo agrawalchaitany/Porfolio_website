@@ -12,43 +12,63 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="favicon.ico">  <style>
     .gradient-text {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #6366f1;
+    }    .solid-bg {
+      background-color: #ffffff;
+      border: 2px solid #e5e7eb;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     .card-hover {
       transition: all 0.3s ease;
     }
     .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.15);
+    }
+    .tech-tag {
+      transition: all 0.2s ease;
+    }
+    .tech-tag:hover {
+      transform: scale(1.05);
+    }
+    .cert-card-1 {
+      background-color: #ec4899;
+      color: white;
+    }
+    .cert-card-2 {
+      background-color: #06b6d4;
+      color: white;
+    }
+    .cert-card-3 {
+      background-color: #10b981;
+      color: white;
     }
     .form-input {
       transition: all 0.3s ease;
-      border: 2px solid rgba(147, 51, 234, 0.1);
+      border: 2px solid #d1d5db;
     }
     .form-input:focus {
-      border-color: #9333ea;
-      box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
-    .contact-bg {
-      background: linear-gradient(135deg, #fef7ff 0%, #fce7f3 50%, #ede9fe 100%);
+    .content-section {
+      margin: 2rem 0;
+      padding: 2rem 0;
+    }
+    .solid-header {
+      background-color: #1f2937;
+      border-bottom: 3px solid #6366f1;
     }
   </style>
 </head>
-<body class="font-inter bg-gradient-to-br from-purple-50 via-pink-50 to-rose-100 min-h-screen text-gray-900 antialiased contact-bg">  <!-- Header -->
-  <header class="backdrop-blur-lg bg-white/70 border-b border-white/20 sticky top-0 z-50">
+<body class="font-inter bg-gray-50 min-h-screen text-gray-900 antialiased">  <!-- Header -->
+  <header class="solid-header sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold gradient-text">Alex Rodriguez</a>        <nav class="hidden md:flex space-x-8">
-          <a href="about.html" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">About</a>
-          <a href="projects.html" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">Projects</a>
+        <a href="index.html" class="text-2xl font-bold text-white">Alex Rodriguez</a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="about.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">About</a>
+          <a href="projects.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">Projects</a>
           <a href="index.html#certifications" class="text-gray-700 hover:text-purple-600 transition-colors duration-200 font-medium">Certifications</a>
           <a href="contact.html" class="text-purple-600 font-semibold border-b-2 border-purple-600 pb-1">Contact</a>
         </nav>
@@ -76,43 +96,39 @@
 
     <!-- Contact Content -->
     <div class="max-w-6xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <!-- Contact Information -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start">        <!-- Contact Information -->
         <div class="space-y-8" data-aos="fade-right" data-aos-delay="100">
-          <div class="glass-effect rounded-3xl p-8">
+          <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 p-8">
             <h2 class="text-3xl font-bold mb-6 gradient-text">Let's Connect</h2>
             <p class="text-lg text-gray-600 mb-8 leading-relaxed">
               I'm always excited to discuss new opportunities, collaborate on innovative projects, or answer questions about data science and machine learning. Whether you're looking for a data scientist, have a project in mind, or just want to chat about the latest in ML, I'd love to hear from you.
             </p>
-            
-            <!-- Contact Details -->
+              <!-- Contact Details -->
             <div class="space-y-6">              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26c.3.16.65.16.95 0L20 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                   </svg>
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-800">Email</h3>
                   <p class="text-gray-600">alex.rodriguez@email.com</p>
                 </div>
-              </div>
-                <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </div>              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center shadow-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
                   </svg>
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-800">Location</h3>
                   <p class="text-gray-600">San Francisco, CA</p>
                 </div>
-              </div>
-                <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-orange-600 to-pink-600 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </div>              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center shadow-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
                   </svg>
                 </div>
                 <div>
@@ -120,34 +136,25 @@
                   <p class="text-gray-600">Within 24 hours</p>
                 </div>
               </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="mt-8 pt-8 border-t border-white/20">
+            </div>            <!-- Social Links -->
+            <div class="mt-8 pt-8 border-t border-gray-200">
               <h3 class="font-semibold text-gray-800 mb-4">Connect on Social</h3>              <div class="flex space-x-4">
-                <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg flex items-center justify-center transition-colors duration-200">
+                <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-colors duration-200">
                   <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                 </a>
-                <a href="#" class="w-10 h-10 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 rounded-lg flex items-center justify-center transition-colors duration-200">
+                <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-gray-800 rounded-lg flex items-center justify-center transition-colors duration-200">
                   <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                </a>
-                <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 rounded-lg flex items-center justify-center transition-colors duration-200">
-                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                   </svg>
                 </a>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Contact Form -->
+        </div>        <!-- Contact Form -->
         <div class="space-y-8" data-aos="fade-left" data-aos-delay="200">
-          <div class="glass-effect rounded-3xl p-8">
+          <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 p-8">
             <h2 class="text-3xl font-bold mb-6 gradient-text">Send a Message</h2>
             <form class="space-y-6" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
               <div class="grid md:grid-cols-2 gap-6">
@@ -197,10 +204,9 @@
                   class="form-input w-full px-4 py-3 rounded-xl bg-white/50 backdrop-blur-sm outline-none transition-all duration-300 focus:bg-white resize-none"
                   placeholder="Tell me about your project, questions, or how we can work together..."
                 ></textarea>
-              </div>
-                <button 
+              </div>              <button 
                 type="submit" 
-                class="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                class="w-full px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <span class="flex items-center justify-center">
                   Send Message
@@ -211,13 +217,12 @@
               </button>
             </form>
           </div>
-          
-          <!-- Quick Contact Cards -->
-          <div class="grid grid-cols-1 gap-4">            <div class="glass-effect rounded-2xl p-6 card-hover cursor-pointer" onclick="window.location.href='mailto:alex.rodriguez@email.com'">
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26c.3.16.65.16.95 0L20 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            <!-- Quick Contact Cards -->
+          <div class="grid grid-cols-1 gap-4">            <div class="card-hover bg-white rounded-2xl shadow-lg border border-gray-100 p-6 cursor-pointer" onclick="window.location.href='mailto:alex.rodriguez@email.com'">
+              <div class="flex items-center space-x-4">                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 rounded-xl flex items-center justify-center transition-all duration-200 shadow-lg">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                   </svg>
                 </div>
                 <div>
@@ -239,13 +244,7 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <p class="text-gray-600">&copy; 2025 Alex Rodriguez. All rights reserved.</p>
-        </div>        <div class="flex space-x-6">
-          <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors duration-200">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-            </svg>
-          </a>
-          <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors duration-200">
+        </div>        <div class="flex space-x-6">          <a href="#" class="text-gray-600 hover:text-purple-600 transition-colors duration-200">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>

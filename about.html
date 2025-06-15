@@ -12,48 +12,55 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="icon" href="favicon.ico">  <style>
     .gradient-text {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #6366f1;
     }
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+    .solid-bg {
+      background-color: #ffffff;
+      border: 2px solid #e5e7eb;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     .card-hover {
       transition: all 0.3s ease;
     }
     .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.15);
     }
     .skill-card-1 {
-      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      background-color: #ec4899;
+      color: white;
     }
     .skill-card-2 {
-      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      background-color: #06b6d4;
+      color: white;
     }
     .skill-card-3 {
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      background-color: #f59e0b;
+      color: white;
+    }
+    .content-section {
+      margin: 2rem 0;
+      padding: 2rem 0;
+    }
+    .solid-header {
+      background-color: #1f2937;
+      border-bottom: 3px solid #6366f1;
     }
   </style>
 </head>
-<body class="font-inter bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 min-h-screen text-gray-900 antialiased">
-  <!-- Header -->
-  <header class="backdrop-blur-lg bg-white/70 border-b border-white/20 sticky top-0 z-50">
+<body class="font-inter bg-gray-50 min-h-screen text-gray-900 antialiased">  <!-- Header -->
+  <header class="solid-header sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold gradient-text">Alex Rodriguez</a>
+        <a href="index.html" class="text-2xl font-bold text-white">Alex Rodriguez</a>
         <nav class="hidden md:flex space-x-8">
-          <a href="about.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">About</a>
-          <a href="projects.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Projects</a>
-          <a href="index.html#certifications" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Certifications</a>
-          <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
+          <a href="about.html" class="text-indigo-300 font-semibold border-b-2 border-indigo-300 pb-1">About</a>
+          <a href="projects.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">Projects</a>
+          <a href="index.html#certifications" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">Certifications</a>
+          <a href="contact.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">Contact</a>
         </nav>
         <!-- Mobile menu button -->
-        <button class="md:hidden p-2" onclick="toggleMenu()">
+        <button class="md:hidden p-2 text-white" onclick="toggleMenu()">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -63,7 +70,7 @@
   </header>  <!-- Main Content -->
   <main class="container mx-auto px-6 py-16">
     <!-- Hero Section -->
-    <section class="text-center mb-16" data-aos="fade-up">
+    <section class="content-section bg-white text-center mb-16" data-aos="fade-up">
       <h1 class="text-5xl md:text-6xl font-bold mb-6">
         About <span class="gradient-text">Me</span>
       </h1>
@@ -73,8 +80,8 @@
     </section>
 
     <!-- Profile Section -->
-    <section class="max-w-6xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
-      <div class="glass-effect rounded-3xl p-8 md:p-12">
+    <section class="content-section bg-gray-100 max-w-6xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
+      <div class="solid-bg rounded-3xl p-8 md:p-12">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img src="avatar.png" alt="Alex Rodriguez" class="w-64 h-64 rounded-2xl shadow-2xl mx-auto border-4 border-white/50">
@@ -86,19 +93,16 @@
             </p>
             <p class="text-lg text-gray-700 mb-8 leading-relaxed">
               My expertise spans the entire data science workflow - from data collection and cleaning to advanced modeling and deployment. I'm particularly passionate about finding patterns in data and using machine learning to solve real-world problems.
-            </p>
-            <div class="flex flex-wrap gap-3">
-              <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-medium">Python Expert</span>
-              <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-medium">ML Engineer</span>
-              <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full font-medium">Data Analyst</span>
+            </p>            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full font-medium">Python Expert</span>
+              <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full font-medium">ML Engineer</span>
+              <span class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full font-medium">Data Analyst</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="max-w-6xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+    </section>    <!-- Skills Section -->
+    <section class="content-section bg-white max-w-6xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
       <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Technical Expertise</h2>      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Programming & Analysis -->
         <div class="skill-card-1 rounded-2xl p-6 card-hover text-white">
