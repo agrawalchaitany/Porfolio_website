@@ -1,6 +1,6 @@
-# Alex Rodriguez - Data Scientist Portfolio
+# Chaitany Agrawal - Data Analyst Portfolio
 
-A minimalist, static portfolio website showcasing data science expertise, built with:
+A minimalist, static portfolio website showcasing data analytics expertise, built with:
 - **HTML** (structure)
 - **Tailwind CSS** (CDN, fast and responsive styling)
 - **JavaScript** (vanilla, for interactivity)
@@ -26,7 +26,7 @@ Portfolio_website/
 
 - **Clean & Minimalist Design**: Professional blue-accented theme
 - **Fully Responsive**: Optimized for all devices
-- **Data Science Focus**: Tailored for Python/ML professionals
+- **Data Analytics Focus**: Tailored for Python/Analytics professionals
 - **Smooth Animations**: AOS-powered scroll animations
 - **GitHub Pages Ready**: Static site deployment ready
 
@@ -40,11 +40,11 @@ Portfolio_website/
 
 ## Technologies Featured
 
-- Python & Data Analysis (NumPy, Pandas)
-- Data Visualization (Matplotlib)
-- Machine Learning (Scikit-learn)
-- Database Management (MySQL)
-- Statistical Analysis
+- Python & Data Analysis (Pandas, NumPy)
+- Data Visualization (Matplotlib, Seaborn, PowerBI)
+- Machine Learning (LightGBM, XGBoost)
+- Database Management (SQL, MySQL)
+- Business Intelligence & Excel Analytics
 
 ## Hosting
 
@@ -55,4 +55,4 @@ This portfolio is optimized for GitHub Pages hosting. Simply:
 
 ---
 
-**Portfolio of Alex Rodriguez - Data Scientist**
+**Portfolio of Chaitany Agrawal - Data Analyst**

@@ -1,13 +1,11 @@
-{
-  "name": "alex-rodriguez-portfolio",
+{  "name": "chaitany-agrawal-portfolio",
   "version": "1.0.0",
-  "description": "Minimalist data scientist portfolio website using HTML, Tailwind CSS, JS, Heroicons, and AOS. Showcasing Python, ML, and data analysis expertise.",
+  "description": "Minimalist data analyst portfolio website using HTML, Tailwind CSS, JS, Heroicons, and AOS. Showcasing Python, SQL, PowerBI, and data analytics expertise.",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",
     "serve": "python -m http.server 8000"
-  },
-  "keywords": ["portfolio", "data-science", "python", "machine-learning", "tailwind", "static-site"],
-  "author": "Alex Rodriguez",
+  },  "keywords": ["portfolio", "data-analytics", "python", "sql", "powerbi", "excel", "tailwind", "static-site"],
+  "author": "Chaitany Agrawal",
   "license": "MIT"
 }

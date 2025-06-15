@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Alex Rodriguez - Data Scientist Portfolio</title>
+  <title>Projects | Chaitany Agrawal - Data Analyst Portfolio</title>
   <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- GitHub SVG Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" href="favicon.ico">  <style>
     .gradient-text {
       color: #6366f1;
@@ -67,6 +69,18 @@
       background-color: #10b981;
       color: white;
     }
+    .cert-card-4 {
+      background-color: #8b5cf6;
+      color: white;
+    }
+    .cert-card-5 {
+      background-color: #f59e0b;
+      color: white;
+    }
+    .cert-card-6 {
+      background-color: #ef4444;
+      color: white;
+    }
     .content-section {
       margin: 2rem 0;
       padding: 2rem 0;
@@ -75,13 +89,185 @@
       background-color: #1f2937;
       border-bottom: 3px solid #6366f1;
     }
+
+    /* Certificate Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: modalFadeIn 0.3s ease-out;
+    }
+      .modal-content {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      padding: 0;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      transform: scale(0.8);
+      animation: modalSlideIn 0.3s ease-out forwards;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .modal-header {
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+      .modal-body {
+      background: white;
+      padding: 2rem;
+      border-radius: 0 0 20px 20px;
+      overflow-y: auto;
+      flex: 1;
+      max-height: calc(90vh - 120px);
+    }
+      .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }    .close-modal:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .certificate-badge {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+    
+    .certificate-details {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .detail-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      background: #f8fafc;
+      border-radius: 10px;
+      border-left: 4px solid #6366f1;
+    }
+    
+    .detail-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.75rem;
+      color: #6366f1;
+    }
+      /* Project Modal Styles */
+    .project-modal .modal-content {
+      max-width: 800px;
+      max-height: 90vh;
+    }
+    
+    .project-modal .modal-body {
+      max-height: calc(90vh - 120px);
+      overflow-y: auto;
+    }
+    
+    .photo-viewer {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .pdf-viewer {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .view-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .view-toggle button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .view-toggle button.active {
+      background: #6366f1;
+      color: white;
+      border-color: #6366f1;
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes modalSlideIn {
+      from { 
+        transform: scale(0.8) translateY(50px);
+        opacity: 0;
+      }
+      to { 
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body class="font-inter bg-gray-50 min-h-screen text-gray-900 antialiased">  <!-- Header -->
   <header class="solid-header sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-white">Alex Rodriguez</a>
+        <a href="index.html" class="text-2xl font-bold text-white">Chaitany Agrawal</a>
         <nav class="hidden md:flex space-x-8">
           <a href="about.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">About</a>
           <a href="projects.html" class="text-indigo-300 font-semibold border-b-2 border-indigo-300 pb-1">Projects</a>
@@ -103,21 +289,22 @@
     <section class="content-section bg-white text-center mb-16" data-aos="fade-up">
       <h1 class="text-5xl md:text-6xl font-bold mb-6">
         My <span class="gradient-text">Projects</span>
-      </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        A showcase of data science projects that demonstrate my expertise in Python, machine learning, and data visualization
+      </h1>      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        A showcase of data analytics projects that demonstrate my expertise in Python, machine learning, and data visualization
       </p>
     </section>
 
     <!-- Projects Grid -->
     <section class="content-section bg-gray-100 mb-20" data-aos="fade-up" data-aos-delay="100">
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">                <!-- Sales Data Dashboard -->
-                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">                <!-- Performance Optimization of Solar Panels using ML -->
+                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="100"
+                     onclick="openProjectModal('Performance Optimization of Solar Panels using ML', 'Machine Learning & Data Analytics', 'Developed a machine learning solution to optimize solar panel performance using advanced algorithms. Implemented comprehensive data analysis with Python, feature engineering, and model optimization using LightGBM and XGBoost for improved energy efficiency predictions.', ['Python', 'LightGBM', 'XGBoost', 'Scikit-learn', 'Pandas', 'Seaborn'], '#', '#', 'project-card-1', 'https://via.placeholder.com/800x400/f59e0b/ffffff?text=Solar+Panel+ML+Optimization', null)">
                   <div class="h-48 project-card-1 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                       <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                       </svg>
                     </div>
                     <div class="absolute top-4 right-4">
@@ -125,12 +312,15 @@
                     </div>
                   </div>
                   <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Sales Data Dashboard</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">Interactive dashboard built with Python, Pandas, and Matplotlib for visualizing sales trends and KPIs. Features comprehensive data cleaning and statistical analysis with real-time insights.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Performance Optimization of Solar Panels using ML</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Developed a machine learning solution to optimize solar panel performance using advanced algorithms. Implemented comprehensive data analysis with Python, feature engineering, and model optimization using LightGBM and XGBoost.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
                       <span class="tech-tag px-3 py-1 bg-purple-200 text-purple-800 text-sm rounded-full font-medium">Python</span>
+                      <span class="tech-tag px-3 py-1 bg-green-200 text-green-800 text-sm rounded-full font-medium">LightGBM</span>
+                      <span class="tech-tag px-3 py-1 bg-blue-200 text-blue-800 text-sm rounded-full font-medium">XGBoost</span>
+                      <span class="tech-tag px-3 py-1 bg-orange-200 text-orange-800 text-sm rounded-full font-medium">Scikit-learn</span>
                       <span class="tech-tag px-3 py-1 bg-pink-200 text-pink-800 text-sm rounded-full font-medium">Pandas</span>
-                      <span class="tech-tag px-3 py-1 bg-orange-200 text-orange-800 text-sm rounded-full font-medium">Matplotlib</span>
+                      <span class="tech-tag px-3 py-1 bg-teal-200 text-teal-800 text-sm rounded-full font-medium">Seaborn</span>
                     </div>
                     <div class="flex items-center justify-between">
                       <a href="#" class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold transition-colors group">
@@ -139,30 +329,33 @@
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                       </a>
-                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                      <a href="https://github.com/agrawalchaitany" class="text-gray-400 hover:text-gray-600 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
-                </div>                <!-- Customer Segmentation Model -->
-                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                </div><!-- IMDB Movie Success Analysis -->
+                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="200"
+                     onclick="openProjectModal('IMDB Movie Success Analysis', 'Data Analytics & Visualization', 'Comprehensive analysis of IMDB movie data to identify factors that contribute to movie success. Utilized Excel for data cleaning, statistical analysis, and created interactive visualizations to uncover insights about box office performance, ratings, and audience preferences.', ['Excel', 'Data Analysis', 'Data Visualization', 'Statistical Analysis'], '#', '#', 'project-card-2', null, 'https://via.placeholder.com/800x600.pdf?text=IMDB+Movie+Analysis+Report')">
                   <div class="h-48 project-card-2 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                       <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0v1a1 1 0 01-1 1H8a1 1 0 01-1-1V4m0 0H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M7 10h10M7 14h10"></path>
                       </svg>
                     </div>
                   </div>
                   <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Customer Segmentation Model</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">Machine learning model using K-means clustering to segment customers based on purchasing behavior. Implemented with Scikit-learn for targeted marketing strategies.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">IMDB Movie Success Analysis</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive analysis of IMDB movie data to identify factors that contribute to movie success. Utilized Excel for data cleaning, statistical analysis, and created interactive visualizations.</p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                      <span class="tech-tag px-3 py-1 bg-teal-200 text-teal-800 text-sm rounded-full font-medium">Python</span>
-                      <span class="tech-tag px-3 py-1 bg-green-200 text-green-800 text-sm rounded-full font-medium">Scikit-learn</span>
-                      <span class="tech-tag px-3 py-1 bg-blue-200 text-blue-800 text-sm rounded-full font-medium">K-means</span>
+                      <span class="tech-tag px-3 py-1 bg-teal-200 text-teal-800 text-sm rounded-full font-medium">Excel</span>
+                      <span class="tech-tag px-3 py-1 bg-green-200 text-green-800 text-sm rounded-full font-medium">Data Analysis</span>
+                      <span class="tech-tag px-3 py-1 bg-blue-200 text-blue-800 text-sm rounded-full font-medium">Data Visualization</span>
+                      <span class="tech-tag px-3 py-1 bg-purple-200 text-purple-800 text-sm rounded-full font-medium">Statistical Analysis</span>
                     </div>
                     <div class="flex items-center justify-between">
                       <a href="#" class="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold transition-colors group">
@@ -171,15 +364,17 @@
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                       </a>
-                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                      <a href="https://github.com/agrawalchaitany" class="text-gray-400 hover:text-gray-600 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
                 </div>                <!-- Database Management System -->
-                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="300"
+                     onclick="openProjectModal('Database Management System', 'Database Design & Optimization', 'Comprehensive database design and optimization project using MySQL. Features normalized schemas, complex queries, and performance optimization for large datasets.', ['MySQL', 'Database Design', 'Optimization'], 'https://github.com/alex/database-system', 'https://db-demo.com', 'project-card-3', 'https://via.placeholder.com/800x400/8b5cf6/ffffff?text=Database+Schema', null)">
                   <div class="h-48 project-card-3 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -205,13 +400,15 @@
                       </a>
                       <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
                 </div>                <!-- Stock Price Predictor -->
-                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="400"
+                     onclick="openProjectModal('Stock Price Predictor', 'Financial AI & Prediction', 'Advanced LSTM neural network for predicting stock prices using TensorFlow. Incorporates technical indicators, sentiment analysis, and market data for accurate forecasting.', ['Python', 'TensorFlow', 'LSTM', 'Finance'], 'https://github.com/alex/stock-predictor', 'https://stock-pred-demo.com', 'project-card-4', 'https://via.placeholder.com/800x400/06b6d4/ffffff?text=Stock+Price+Chart', null)">
                   <div class="h-48 project-card-4 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -237,18 +434,20 @@
                       </a>
                       <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
                 </div>                <!-- Web Scraping Tool -->
-                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="500"
+                     onclick="openProjectModal('Web Scraping Tool', 'Data Extraction & Automation', 'Automated data collection tool using Beautiful Soup and Selenium. Efficiently extracts and processes large datasets from multiple web sources with robust error handling.', ['Python', 'Beautiful Soup', 'Selenium'], 'https://github.com/alex/web-scraper', 'https://scraper-demo.com', 'project-card-5', null, 'https://via.placeholder.com/800x600.pdf?text=Web+Scraping+Documentation')">
                   <div class="h-48 project-card-5 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
                       <svg class="w-16 h-16 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c-1.657 0-3-4.03-3-9s1.343-9 3-9m0 18c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9"></path>
                       </svg>
                     </div>
                   </div>
@@ -269,13 +468,15 @@
                       </a>
                       <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>
                   </div>
                 </div>                <!-- Data Visualization Suite -->
-                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="600">
+                <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="600"
+                     onclick="openProjectModal('Data Visualization Suite', 'Business Intelligence & Analytics', 'Interactive visualization platform built with Plotly and Streamlit. Features dynamic charts, real-time data updates, and comprehensive analytics dashboard for business intelligence.', ['Python', 'Plotly', 'Streamlit'], 'https://github.com/alex/data-viz-suite', 'https://viz-suite-demo.com', 'project-card-6', 'https://via.placeholder.com/800x400/10b981/ffffff?text=Data+Visualization+Dashboard', null)">
                   <div class="h-48 project-card-6 relative overflow-hidden">
                     <div class="absolute inset-0 bg-black/10"></div>
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -302,7 +503,7 @@
                       </a>
                       <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                       </a>
                     </div>
@@ -321,38 +522,104 @@
           </div>
           
           <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">            <!-- Python Data Science Certification -->
-            <div class="card-hover cert-card-1 rounded-2xl shadow-lg p-8 border border-white/20 text-center text-white" data-aos="fade-up" data-aos-delay="100">
-              <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+                 data-aos="fade-up" data-aos-delay="100"
+                 onclick="openCertificateModal('Python for Data Science', 'Nptel', '2024', 'cert-card-1', ['Python Programming', 'Data Analysis', 'Statistical Computing', 'Data Visualization'], 'NPTEL-PDS-2024-001', 'https://via.placeholder.com/800x600/ec4899/ffffff?text=Nptel+Certificate')">
+              <div class="cert-card-1 p-6 text-center text-white">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 713.138-3.138z"></path>
+                  </svg>
+                </div>
+                <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
               </div>
-              <h3 class="text-xl font-bold mb-2">Python for Data Science</h3>
-              <p class="font-semibold mb-2 text-white/90">IBM Data Science Professional</p>
-              <p class="text-sm mb-6 text-white/80">March 2024</p>
-              <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Python for Data Science</h3>                <p class="font-semibold mb-2 text-gray-600">Nptel</p>
+                <p class="text-sm text-gray-500">2024</p>
+              </div>
             </div>            <!-- AWS Cloud Practitioner -->
-            <div class="card-hover cert-card-2 rounded-2xl shadow-lg p-8 border border-white/20 text-center text-white" data-aos="fade-up" data-aos-delay="200">
-              <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+                 data-aos="fade-up" data-aos-delay="200"
+                 onclick="openCertificateModal('Programming Fundamentals', 'Coursera', '2024', 'cert-card-2', ['Programming Concepts', 'Algorithm Design', 'Problem Solving', 'Code Optimization'], 'COURSERA-PF-2024-002', null, 'https://via.placeholder.com/800x600.pdf?text=Coursera+Programming+Certificate')">
+              <div class="cert-card-2 p-6 text-center text-white">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 713.138-3.138z"></path>
+                </div>
+                <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
               </div>
-              <h3 class="text-xl font-bold mb-2">Machine Learning Specialization</h3>
-              <p class="font-semibold mb-2 text-white/90">Stanford University</p>
-              <p class="text-sm mb-6 text-white/80">January 2024</p>
-              <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+              <div class="p-6 text-center">                <h3 class="text-xl font-bold mb-2 text-gray-800">Programming Fundamentals</h3>
+                <p class="font-semibold mb-2 text-gray-600">Coursera</p>
+                <p class="text-sm text-gray-500">2024</p>
+              </div>
             </div>            <!-- Google Analytics -->
-            <div class="card-hover cert-card-3 rounded-2xl shadow-lg p-8 border border-white/20 text-center text-white" data-aos="fade-up" data-aos-delay="300">
-              <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+                 data-aos="fade-up" data-aos-delay="300"
+                 onclick="openCertificateModal('Python Certificate', 'Kaggle', '2024', 'cert-card-3', ['Python Programming', 'Data Science Libraries', 'Data Manipulation', 'Pandas'], 'KAGGLE-PYTHON-2024-003', 'https://via.placeholder.com/800x600/10b981/ffffff?text=Kaggle+Python+Certificate')">
+              <div class="cert-card-3 p-6 text-center text-white">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 713.138-3.138z"></path>
+                </div>
+                <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
               </div>
-              <h3 class="text-xl font-bold mb-2">MySQL Database Administration</h3>
-              <p class="font-semibold mb-2 text-white/90">Oracle MySQL Certification</p>
-              <p class="text-sm mb-6 text-white/80">February 2024</p>
-              <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>            </div>
+              <div class="p-6 text-center">                <h3 class="text-xl font-bold mb-2 text-gray-800">Python Certificate</h3>
+                <p class="font-semibold mb-2 text-gray-600">Kaggle</p>
+                <p class="text-sm text-gray-500">2024</p>
+              </div>
+            </div>            <!-- SQL for Data Analysis -->
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+                 data-aos="fade-up" data-aos-delay="400"
+                 onclick="openCertificateModal('SQL for Data Analysis', 'HackerRank', '2024', 'cert-card-4', ['SQL Programming', 'Database Queries', 'Data Filtering', 'Advanced SQL'], 'HACKERRANK-SQL-2024-004', 'https://via.placeholder.com/800x600/8b5cf6/ffffff?text=HackerRank+SQL+Certificate')">
+              <div class="cert-card-4 p-6 text-center text-white">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                  </svg>
+                </div>
+                <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+              </div>
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">SQL for Data Analysis</h3>
+                <p class="font-semibold mb-2 text-gray-600">HackerRank</p>
+                <p class="text-sm text-gray-500">2024</p>
+              </div>
+            </div>            <!-- Data Visualization with Excel -->
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+                 data-aos="fade-up" data-aos-delay="500"
+                 onclick="openCertificateModal('Data Visualization with Excel', 'Microsoft', '2024', 'cert-card-5', ['Excel Analytics', 'Data Visualization', 'Power Query', 'Dashboard Creation'], 'MSFT-EXCEL-2024-005', 'https://via.placeholder.com/800x600/f59e0b/ffffff?text=Microsoft+Excel+Certificate')">
+              <div class="cert-card-5 p-6 text-center text-white">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                  </svg>
+                </div>
+                <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+              </div>
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Data Visualization with Excel</h3>
+                <p class="font-semibold mb-2 text-gray-600">Microsoft</p>
+                <p class="text-sm text-gray-500">2024</p>
+              </div>
+            </div>            <!-- Machine Learning Fundamentals -->
+            <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+                 data-aos="fade-up" data-aos-delay="600"
+                 onclick="openCertificateModal('Machine Learning Fundamentals', 'edX', '2024', 'cert-card-6', ['Machine Learning', 'Supervised Learning', 'Model Evaluation', 'Feature Engineering'], 'EDX-ML-2024-006', 'https://via.placeholder.com/800x600/ef4444/ffffff?text=edX+ML+Certificate')">
+              <div class="cert-card-6 p-6 text-center text-white">
+                <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+              </div>
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Machine Learning Fundamentals</h3>
+                <p class="font-semibold mb-2 text-gray-600">edX</p>
+                <p class="text-sm text-gray-500">2024</p>
+              </div>
+            </div>
+</div>
           </div>
         </section>
     </main><!-- Footer -->
@@ -360,28 +627,173 @@
     <div class="container mx-auto px-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
-          <p class="text-gray-600">&copy; 2025 Alex Rodriguez. All rights reserved.</p>
-        </div>
-        <div class="flex space-x-6">
-          <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-            </svg>
-          </a>
-          <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+          <p class="text-gray-600">&copy; 2025 Chaitany Agrawal. All rights reserved.</p>
+        </div>        <div class="flex space-x-6">
+          <a href="https://linkedin.com/in/agrawalchaitany" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
-          <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+          <a href="https://github.com/agrawalchaitany" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.30 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Certificate Modal -->
+  <div id="certificateModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" onclick="closeCertificateModal()">×</button>
+        <div class="certificate-badge">
+          <svg id="modalIcon" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 713.138-3.138z"></path>
+          </svg>
+        </div>
+        <h3 id="modalTitle" class="text-2xl font-bold mb-2"></h3>
+        <p id="modalOrganization" class="text-lg opacity-90"></p>
+        <span class="inline-block mt-3 px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">✓ Verified Certificate</span>
+      </div>
+      <div class="modal-body">
+        <div class="view-toggle">
+          <button id="certDetailsTab" class="active" onclick="switchCertificateView('details')">Details</button>
+          <button id="certMediaTab" onclick="switchCertificateView('media')">View Certificate</button>
+        </div>
+        
+        <div id="certificateDetails" class="certificate-view">
+          <div class="certificate-details">
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h6m-6 0l6 0m-6 0a6 6 0 00-6 6v6a6 6 0 006 6h6a6 6 0 006-6v-6a6 6 0 00-6-6z"></path>
+              </svg>
+              <div>
+                <strong>Issue Date:</strong>
+                <span id="modalDate"></span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1  4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+              <div>
+                <strong>Issuing Organization:</strong>
+                <span id="modalOrgDetail"></span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <div>
+                <strong>Skills Demonstrated:</strong>
+                <div id="modalSkills" class="flex flex-wrap gap-1 mt-1"></div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 714.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 713.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 710 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 710-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 713.138-3.138z"></path>
+              </svg>
+              <div>
+                <strong>Credential ID:</strong>
+                <span id="modalCredentialId" class="font-mono text-sm bg-gray-100 px-2 py-1 rounded"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="certificateMedia" class="certificate-view" style="display: none;">
+          <div id="certMediaContent">
+            <img id="certificatePhoto" class="photo-viewer" style="display: none;" alt="Certificate Image">
+            <iframe id="certificatePDF" class="pdf-viewer" style="display: none;"></iframe>
+            <p id="noCertMediaMessage" class="text-center text-gray-500 py-8">No certificate media available</p>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <button onclick="closeCertificateModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" onclick="closeProjectModal()">×</button>
+        <div class="certificate-badge">
+          <svg id="projectModalIcon" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+        </div>
+        <h3 id="projectModalTitle" class="text-2xl font-bold mb-2"></h3>
+        <p id="projectModalType" class="text-lg opacity-90"></p>
+        <span class="inline-block mt-3 px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">✓ Featured Project</span>
+      </div>
+      <div class="modal-body">
+        <div class="view-toggle">
+          <button id="detailsTab" class="active" onclick="switchProjectView('details')">Details</button>
+          <button id="mediaTab" onclick="switchProjectView('media')">View Media</button>
+        </div>
+        
+        <div id="projectDetails" class="project-view">
+          <div class="certificate-details">
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <div>
+                <strong>Description:</strong>
+
+                <p id="projectModalDescription" class="mt-1 text-sm"></p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              <div>
+                <strong>Technologies Used:</strong>
+                <div id="projectModalTech" class="tech-tags"></div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4  0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+              <div>
+                <strong>Project Links:</strong>
+                <div class="flex gap-2 mt-1">
+                  <a id="projectGithubLink" href="#" target="_blank" class="text-blue-600 hover:text-blue-700 text-sm">GitHub</a>
+                  <a id="projectLiveLink" href="#" target="_blank" class="text-green-600 hover:text-green-700 text-sm">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="projectMedia" class="project-view" style="display: none;">
+          <div id="mediaContent">
+            <img id="projectPhoto" class="photo-viewer" style="display: none;" alt="Project Screenshot">
+            <iframe id="projectPDF" class="pdf-viewer" style="display: none;"></iframe>
+            <p id="noMediaMessage" class="text-center text-gray-500 py-8">No media available for this project</p>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <button onclick="closeProjectModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

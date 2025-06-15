@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Rodriguez | Data Scientist Portfolio</title>
+  <title>Chaitany Agrawal | Data Analyst Portfolio</title>
   <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
@@ -48,6 +48,18 @@
       background-color: #10b981;
       color: white;
     }
+    .cert-card-4 {
+      background-color: #8b5cf6;
+      color: white;
+    }
+    .cert-card-5 {
+      background-color: #f59e0b;
+      color: white;
+    }
+    .cert-card-6 {
+      background-color: #ef4444;
+      color: white;
+    }
     .project-card-1 {
       background-color: #f59e0b;
       color: white;
@@ -67,11 +79,181 @@
     /* Fix for sticky header overlap */
     section[id] {
       scroll-margin-top: 100px;
-    }
-    /* Ensure no overlap on About section */
+    }    /* Ensure no overlap on About section */
     #about {
       position: relative;
       z-index: 1;
+    }
+    
+    /* Certificate Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: modalFadeIn 0.3s ease-out;
+    }
+      .modal-content {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      padding: 0;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      transform: scale(0.8);
+      animation: modalSlideIn 0.3s ease-out forwards;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .modal-header {
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+      .modal-body {
+      background: white;
+      padding: 2rem;
+      border-radius: 0 0 20px 20px;
+      overflow-y: auto;
+      flex: 1;
+      max-height: calc(90vh - 120px);
+    }
+      .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }    .close-modal:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .certificate-badge {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+    
+    .certificate-details {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .detail-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      background: #f8fafc;
+      border-radius: 10px;
+      border-left: 4px solid #6366f1;
+    }
+    
+    .detail-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.75rem;
+      color: #6366f1;
+    }
+    
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes modalSlideIn {
+      from { 
+        transform: scale(0.8) translateY(50px);
+        opacity: 0;
+      }
+      to { 
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }    /* Project Modal Styles */
+    .project-modal .modal-content {
+      max-width: 800px;
+      max-height: 90vh;
+    }
+    
+    .project-modal .modal-body {
+      max-height: calc(90vh - 120px);
+      overflow-y: auto;
+    }
+    
+    .photo-viewer {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .pdf-viewer {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    
+    .view-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .view-toggle button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #d1d5db;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .view-toggle button.active {
+      background: #6366f1;
+      color: white;
+      border-color: #6366f1;
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -79,7 +261,7 @@
   <header class="solid-header sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-white">Alex Rodriguez</a>
+        <a href="index.html" class="text-2xl font-bold text-white">Chaitany Agrawal</a>
         <nav class="hidden md:flex space-x-8">
           <a href="about.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">About</a>
           <a href="projects.html" class="text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium">Projects</a>
@@ -99,16 +281,15 @@
     <div class="container mx-auto px-6">
       <div class="flex flex-col items-center text-center max-w-4xl mx-auto" data-aos="fade-up">
         <div class="relative mb-8">
-          <img src="avatar.png" alt="Alex Rodriguez" class="w-40 h-40 rounded-full shadow-lg border-4 border-indigo-500">
+          <img src="avatar.png" alt="Chaitany Agrawal" class="w-40 h-40 rounded-full shadow-lg border-4 border-indigo-500">
           <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
             <div class="w-3 h-3 bg-white rounded-full"></div>
           </div>
-        </div>
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Hi, I'm <span class="gradient-text">Alex Rodriguez</span>
+        </div>        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Hi, I'm <span class="gradient-text">Chaitany Agrawal</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
-          A passionate <span class="font-semibold text-indigo-600">data scientist</span> crafting insights from data with Python and machine learning
+          A motivated <span class="font-semibold text-indigo-600">data analyst</span> with expertise in Python, SQL, Excel, and machine learning
         </p>
         <div class="flex flex-col sm:flex-row gap-4 mb-12">
           <a href="#projects" class="px-8 py-4 bg-indigo-600 text-white rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
@@ -124,7 +305,7 @@
     <div class="container mx-auto px-6">
       <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-4 gradient-text">About Me</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Passionate data scientist with expertise in Python, machine learning, and database management</p>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Motivated data analyst with expertise in Data Analytics, Python, SQL, and Excel</p>
       </div>
       
       <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
@@ -134,37 +315,39 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 mb-8">Data Science Professional</h3>
+          <h3 class="text-2xl font-bold text-gray-800 mb-8">Data Analytics Professional</h3>
         </div>
-        
-        <div class="text-lg text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+          <div class="text-lg text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
           <p class="mb-6">
-            I'm a passionate data scientist with a strong foundation in statistical analysis, machine learning, and database management. 
-            With expertise in Python, I transform complex datasets into actionable insights that drive business decisions.
+            I'm a motivated data analyst with a strong foundation in Data Analytics, Python, SQL, and Excel. 
+            With a B.Tech in Computer Science and Engineering from Dronacharya College of Engineering, Gurgaon (2021), 
+            I bring both technical expertise and analytical thinking to data-driven solutions.
           </p>
           
           <p class="mb-6">
-            My experience spans across various domains including predictive modeling, data visualization, and algorithm development. 
-            I specialize in using cutting-edge tools like Scikit-learn, Pandas, and Matplotlib to solve real-world problems.
+            My experience spans across extracting, cleaning, and analyzing data to uncover meaningful insights that drive decision-making. 
+            I specialize in statistical analysis, research methodologies, and data visualization using tools like Python (NumPy, Pandas, Matplotlib), 
+            MySQL, and PowerBI to present findings in clear and actionable manner.
           </p>
           
           <p class="mb-8">
-            When I'm not diving deep into data, I enjoy staying updated with the latest trends in artificial intelligence and 
-            contributing to open-source projects that make data science more accessible to everyone.
+            I'm eager to apply my analytical skills and problem-solving abilities to develop data-driven solutions that enhance efficiency and impact. 
+            I've published research papers and have hands-on experience with machine learning projects including performance optimization and predictive analytics.
           </p>
         </div>
 
         <div class="border-t border-gray-300 pt-12 max-w-3xl mx-auto">
-          <h4 class="text-xl font-semibold text-gray-800 mb-6">Core Technologies</h4>
-          <div class="flex flex-wrap justify-center gap-3">
+          <h4 class="text-xl font-semibold text-gray-800 mb-6">Core Technologies</h4>          <div class="flex flex-wrap justify-center gap-3">
             <span class="px-4 py-2 bg-indigo-100 text-indigo-800 text-sm font-medium rounded-full">Python</span>
             <span class="px-4 py-2 bg-purple-100 text-purple-800 text-sm font-medium rounded-full">Pandas</span>
-            <span class="px-4 py-2 bg-pink-100 text-pink-800 text-sm font-medium rounded-full">Scikit-learn</span>
+            <span class="px-4 py-2 bg-pink-100 text-pink-800 text-sm font-medium rounded-full">NumPy</span>
             <span class="px-4 py-2 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">Matplotlib</span>
-            <span class="px-4 py-2 bg-teal-100 text-teal-800 text-sm font-medium rounded-full">NumPy</span>
-            <span class="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">TensorFlow</span>
-            <span class="px-4 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-full">MySQL</span>
-            <span class="px-4 py-2 bg-red-100 text-red-800 text-sm font-medium rounded-full">PostgreSQL</span>
+            <span class="px-4 py-2 bg-teal-100 text-teal-800 text-sm font-medium rounded-full">SQL</span>
+            <span class="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">MySQL</span>
+            <span class="px-4 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-full">PowerBI</span>
+            <span class="px-4 py-2 bg-red-100 text-red-800 text-sm font-medium rounded-full">Excel</span>
+            <span class="px-4 py-2 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">LightGBM</span>
+            <span class="px-4 py-2 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">XGBoost</span>
           </div>
         </div>
       </div>
@@ -176,8 +359,9 @@
         <h2 class="text-4xl font-bold mb-4 gradient-text">Featured Projects</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">Showcasing innovative solutions built with cutting-edge data science technologies</p>
       </div>
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">        <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+             data-aos="fade-up" data-aos-delay="100"
+             onclick="openProjectModal('Performance Optimization of Solar Panels using ML', 'Machine Learning & Predictive Analytics', 'Developed a machine learning model to predict solar panel efficiency and detect potential degradation using environmental and sensor data (temperature, irradiance, humidity, voltage, current, etc.). Performed feature engineering, model training, and evaluation using advanced algorithms like LightGBM and XGBoost.', ['Python', 'LightGBM', 'XGBoost', 'Scikit-learn', 'Pandas', 'Seaborn'], 'https://github.com/agrawalchaitany/solar-panels-ml', '', 'project-card-1', 'https://via.placeholder.com/800x400/f59e0b/ffffff?text=Solar+Panel+ML+Project', null)">
           <div class="h-48 project-card-1 relative overflow-hidden">
             <div class="absolute inset-0 bg-black/10"></div>
             <div class="absolute inset-0 flex items-center justify-center">
@@ -189,12 +373,12 @@
               <span class="bg-white/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">Featured</span>
             </div>
           </div>
-          <div class="p-8">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Sales Data Dashboard</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">Interactive dashboard built with Python, Pandas, and Matplotlib for visualizing sales trends and KPIs. Features comprehensive data cleaning and statistical analysis.</p>            <div class="flex flex-wrap gap-2 mb-6">
+          <div class="p-8 bg-white">            <h3 class="text-2xl font-bold mb-4 text-gray-800">Performance Optimization of Solar Panels using ML</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Machine learning model to predict solar panel efficiency and detect potential degradation using environmental and sensor data with advanced algorithms.</p>            <div class="flex flex-wrap gap-2 mb-6">
               <span class="tech-tag px-3 py-1 bg-purple-200 text-purple-800 text-sm rounded-full font-medium">Python</span>
-              <span class="tech-tag px-3 py-1 bg-pink-200 text-pink-800 text-sm rounded-full font-medium">Pandas</span>
-              <span class="tech-tag px-3 py-1 bg-orange-200 text-orange-800 text-sm rounded-full font-medium">Matplotlib</span>
+              <span class="tech-tag px-3 py-1 bg-pink-200 text-pink-800 text-sm rounded-full font-medium">LightGBM</span>
+              <span class="tech-tag px-3 py-1 bg-orange-200 text-orange-800 text-sm rounded-full font-medium">XGBoost</span>
+              <span class="tech-tag px-3 py-1 bg-green-200 text-green-800 text-sm rounded-full font-medium">Scikit-learn</span>
             </div>
             <a href="projects.html" class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold transition-colors">
               View All Projects 
@@ -203,23 +387,22 @@
               </svg>
             </a>
           </div>
-        </div>
-
-        <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-          <div class="h-48 project-card-2 relative overflow-hidden">
+        </div>        <div class="card-hover bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 cursor-pointer" 
+             data-aos="fade-up" data-aos-delay="200"
+             onclick="openProjectModal('IMDB Movie Success Analysis', 'Data Analysis & Visualization', 'Analyzed IMDb movie data to identify trends in genres, languages, directors, and budgets. Discovered high-rated genres (Biography, History) and top-performing directors. Found weak correlation between budget and success, highlighting content quality over cost. Delivered actionable insights using Excel charts and statistical summaries.', ['Excel', 'Data Analysis', 'Data Visualization', 'Statistical Analysis'], 'https://github.com/agrawalchaitany/imdb-analysis', '', 'project-card-2', null, 'https://via.placeholder.com/800x600.pdf?text=IMDB+Analysis+Report')">"          <div class="h-48 project-card-2 relative overflow-hidden">
             <div class="absolute inset-0 bg-black/10"></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <svg class="w-16 h-16 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
               </svg>
             </div>
           </div>
-          <div class="p-8">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800">Customer Prediction Model</h3>
-            <p class="text-gray-600 mb-6 leading-relaxed">Machine learning classifier using Scikit-learn to predict customer behavior with advanced preprocessing and model evaluation techniques.</p>            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="tech-tag px-3 py-1 bg-teal-200 text-teal-800 text-sm rounded-full font-medium">Python</span>
-              <span class="tech-tag px-3 py-1 bg-green-200 text-green-800 text-sm rounded-full font-medium">Scikit-learn</span>
-              <span class="tech-tag px-3 py-1 bg-blue-200 text-blue-800 text-sm rounded-full font-medium">NumPy</span>
+          <div class="p-8 bg-white">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">IMDB Movie Success Analysis</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">Data analysis project identifying trends in movie success factors including genres, directors, and budgets using Excel and statistical analysis.</p>            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tech-tag px-3 py-1 bg-teal-200 text-teal-800 text-sm rounded-full font-medium">Excel</span>
+              <span class="tech-tag px-3 py-1 bg-green-200 text-green-800 text-sm rounded-full font-medium">Data Analysis</span>
+              <span class="tech-tag px-3 py-1 bg-blue-200 text-blue-800 text-sm rounded-full font-medium">Data Visualization</span>
             </div>
             <a href="projects.html" class="inline-flex items-center text-teal-600 hover:text-teal-700 font-semibold transition-colors">
               View All Projects 
@@ -237,41 +420,61 @@
       <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-4 gradient-text">Professional Certifications</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">Continuous learning and professional development in data science and technology</p>
-      </div><div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="card-hover cert-card-1 rounded-2xl shadow-lg p-8 border border-white/20 text-center text-white" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-            </svg>
+      </div>      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"><!-- Python for Data Science - Nptel -->
+        <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+             data-aos="fade-up" data-aos-delay="100"
+             onclick="openCertificateModal('Python for Data Science', 'Nptel', 'Completed', 'cert-card-1', ['Python Programming', 'Data Science', 'Statistical Computing', 'Data Analysis'], 'NPTEL-PY-DS-2024', 'https://via.placeholder.com/800x600/ec4899/ffffff?text=Nptel+Python+Certificate', null)">
+          <div class="cert-card-1 p-6 text-center text-white">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 114.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 110-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+              </svg>
+            </div>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
           </div>
-          <h3 class="text-xl font-bold mb-2">Python for Data Science</h3>
-          <p class="font-semibold mb-2 text-white/90">IBM Data Science Professional</p>
-          <p class="text-sm mb-6 text-white/80">March 2024</p>
-          <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold mb-2 text-gray-800">Python for Data Science</h3>
+            <p class="font-semibold mb-2 text-gray-600">Nptel</p>
+            <p class="text-sm text-gray-500">Completed</p>
+          </div>
         </div>
 
-        <div class="card-hover cert-card-2 rounded-2xl shadow-lg p-8 border border-white/20 text-center text-white" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-            </svg>
+        <!-- Programming Fundamentals - Coursera -->
+        <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+             data-aos="fade-up" data-aos-delay="200"
+             onclick="openCertificateModal('Programming Fundamentals', 'Coursera', 'Completed', 'cert-card-2', ['Programming Concepts', 'Logic Building', 'Problem Solving', 'Algorithm Design'], 'COURSERA-PF-2024', null, 'https://via.placeholder.com/800x600.pdf?text=Coursera+Programming+Certificate')">
+          <div class="cert-card-2 p-6 text-center text-white">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 114.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 113.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 110 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 110-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 113.138-3.138z"></path>
+              </svg>
+            </div>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
           </div>
-          <h3 class="text-xl font-bold mb-2">Machine Learning Specialization</h3>
-          <p class="font-semibold mb-2 text-white/90">Stanford University</p>
-          <p class="text-sm mb-6 text-white/80">January 2024</p>
-          <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold mb-2 text-gray-800">Programming Fundamentals</h3>
+            <p class="font-semibold mb-2 text-gray-600">Coursera</p>
+            <p class="text-sm text-gray-500">Completed</p>
+          </div>
         </div>
 
-        <div class="card-hover cert-card-3 rounded-2xl shadow-lg p-8 border border-white/20 text-center text-white" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-            </svg>
+        <!-- Python - Kaggle -->
+        <div class="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 cursor-pointer" 
+             data-aos="fade-up" data-aos-delay="300"
+             onclick="openCertificateModal('Python', 'Kaggle', 'Completed', 'cert-card-3', ['Python Programming', 'Data Manipulation', 'Data Analysis', 'Practical Coding'], 'KAGGLE-PY-2024', 'https://via.placeholder.com/800x600/10b981/ffffff?text=Kaggle+Python+Certificate', null)">
+          <div class="cert-card-3 p-6 text-center text-white">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 114.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 110-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 113.138-3.138z"></path>
+              </svg>
+            </div>
+            <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
           </div>
-          <h3 class="text-xl font-bold mb-2">MySQL Database Administration</h3>
-          <p class="font-semibold mb-2 text-white/90">Oracle MySQL Certification</p>
-          <p class="text-sm mb-6 text-white/80">February 2024</p>
-          <span class="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">Verified</span>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold mb-2 text-gray-800">Python</h3>
+            <p class="font-semibold mb-2 text-gray-600">Kaggle</p>
+            <p class="text-sm text-gray-500">Completed</p>
+          </div>
         </div>
       </div>
       <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
@@ -318,31 +521,168 @@
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-12">
     <div class="container mx-auto px-6">
-      <div class="text-center">
-        <h3 class="text-2xl font-bold mb-4 gradient-text">Alex Rodriguez</h3>
-        <p class="text-gray-400 mb-8 max-w-md mx-auto">Data Scientist passionate about turning complex data into actionable insights</p>        <div class="flex justify-center space-x-6 mb-8">
-          <a href="mailto:alex.rodriguez@email.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
+      <div class="text-center">        <h3 class="text-2xl font-bold mb-4 gradient-text">Chaitany Agrawal</h3>
+        <p class="text-gray-400 mb-8 max-w-md mx-auto">Data Analyst passionate about turning complex data into actionable insights</p><div class="flex justify-center space-x-6 mb-8">
+          <a href="mailto:agrawalchaitany@gmail.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M3 8l7.89 4.26c.3.16.65.16.95 0L20 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              <path d="M3 8l7.89 4.26c.3.16.65.16.95 0L20 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h4a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
             </svg>
-          </a>
-          <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
+          </a>          <a href="https://linkedin.com/in/agrawalchaitany" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
-          <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
+          <a href="https://github.com/agrawalchaitany" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
           </a>
         </div>
         <div class="border-t border-gray-800 pt-8">
-          <p class="text-gray-500 text-sm">&copy; 2025 Alex Rodriguez. All rights reserved.</p>
+          <p class="text-gray-500 text-sm">&copy; 2025 Chaitany Agrawal. All rights reserved.</p>
+        </div>
+      </div>
+    </div>  </footer>
+
+  <!-- Certificate Modal -->
+  <div id="certificateModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" onclick="closeCertificateModal()">×</button>
+        <div class="certificate-badge">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+        </div>
+        <h2 id="certificateModalTitle" class="text-3xl font-bold mb-2"></h2>
+        <p id="certificateModalIssuer" class="text-xl opacity-90"></p>
+      </div>
+      <div class="modal-body">
+        <div class="view-toggle">
+          <button id="certDetailsTab" onclick="switchCertificateView('details')" class="active">Details</button>
+          <button id="certMediaTab" onclick="switchCertificateView('media')">View Media</button>
+        </div>
+        
+        <div id="certificateDetails" class="certificate-view">
+          <div class="certificate-details">
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a4 4 0 118 0v4m-4 6v6m-4-6v6m8-6v6"></path>
+              </svg>
+              <div>
+                <strong>Certificate ID:</strong>
+                <span id="certificateModalId"></span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a4 4 0 118 0v4m-4 6v6m-4-6v6m8-6v6"></path>
+              </svg>
+              <div>
+                <strong>Issue Date:</strong>
+                <span id="certificateModalDate"></span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              <div>
+                <strong>Skills Covered:</strong>
+                <div id="certificateModalSkills" class="tech-tags"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="certificateMedia" class="certificate-view" style="display: none;">
+          <div id="certMediaContent">
+            <img id="certificatePhoto" class="photo-viewer" style="display: none;" alt="Certificate">
+            <iframe id="certificatePDF" class="pdf-viewer" style="display: none;"></iframe>
+            <p id="certNoMediaMessage" class="text-center text-gray-500 py-8">No media available for this certificate</p>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <button onclick="closeCertificateModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+            Close
+          </button>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close-modal" onclick="closeProjectModal()">×</button>
+        <div class="certificate-badge">
+          <svg id="projectModalIcon" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+        </div>
+        <h3 id="projectModalTitle" class="text-2xl font-bold mb-2"></h3>
+        <p id="projectModalType" class="text-lg opacity-90"></p>
+        <span class="inline-block mt-3 px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">✓ Featured Project</span>
+      </div>
+      <div class="modal-body">
+        <div class="view-toggle">
+          <button id="detailsTab" class="active" onclick="switchProjectView('details')">Details</button>
+          <button id="mediaTab" onclick="switchProjectView('media')">View Media</button>
+        </div>
+        
+        <div id="projectDetails" class="project-view">
+          <div class="certificate-details">
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <div>
+                <strong>Description:</strong>
+                <p id="projectModalDescription" class="mt-1 text-sm"></p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              <div>
+                <strong>Technologies Used:</strong>
+                <div id="projectModalTech" class="tech-tags"></div>
+              </div>
+            </div>
+            <div class="detail-item">
+              <svg class="detail-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+              <div>
+                <strong>Project Links:</strong>
+                <div class="flex gap-2 mt-1">
+                  <a id="projectGithubLink" href="#" target="_blank" class="text-blue-600 hover:text-blue-700 text-sm">GitHub</a>
+                  <a id="projectLiveLink" href="#" target="_blank" class="text-green-600 hover:text-green-700 text-sm">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div id="projectMedia" class="project-view" style="display: none;">
+          <div id="mediaContent">
+            <img id="projectPhoto" class="photo-viewer" style="display: none;" alt="Project Screenshot">
+            <iframe id="projectPDF" class="pdf-viewer" style="display: none;"></iframe>
+            <p id="noMediaMessage" class="text-center text-gray-500 py-8">No media available for this project</p>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <button onclick="closeProjectModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
