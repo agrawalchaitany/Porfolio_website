@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Heroicons -->
+  <script src="https://unpkg.com/heroicons@2.0.13/dist/heroicons.min.js"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body class="bg-white text-gray-900 font-sans">
+  <!-- Header -->
+  <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">My Portfolio</h1>
+    <nav class="space-x-6">
+      <a href="#about" class="hover:text-blue-600">About</a>
+      <a href="#projects" class="hover:text-blue-600">Projects</a>
+      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="container mx-auto px-4 py-16 flex flex-col items-center text-center" id="hero" data-aos="fade-up">
+    <img src="avatar.png" alt="Avatar" class="w-32 h-32 rounded-full mb-6 border-4 border-blue-100 shadow-lg">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-2">Hi, I'm [Your Name]</h2>
+    <p class="text-lg text-gray-600 mb-4">A passionate web developer crafting minimalist experiences.</p>
+    <a href="#projects" class="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">View My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="container mx-auto px-4 py-16" id="about" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-4">About Me</h3>
+    <p class="text-gray-700 max-w-2xl mx-auto">I'm a web developer with a love for clean, minimalist design and modern web technologies. I enjoy building fast, responsive, and accessible websites.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="container mx-auto px-4 py-16" id="projects" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-8 text-center">Projects</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Project Card Example -->
+      <div class="bg-white rounded-lg shadow p-6 flex flex-col" data-aos="fade-up">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-blue-600 mr-2"><use href="#heroicon-o-code" /></svg>
+          <h4 class="text-lg font-semibold">Project Title</h4>
+        </div>
+        <p class="text-gray-600 flex-1">Short description of the project goes here. Highlight the tech stack and your role.</p>
+        <a href="#" class="mt-4 text-blue-600 hover:underline">View Project</a>
+      </div>
+      <!-- Add more project cards as needed -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container mx-auto px-4 py-16" id="contact" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-4">Contact</h3>
+    <form class="max-w-xl mx-auto flex flex-col gap-4" name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required class="border rounded px-4 py-2">
+      <input type="email" name="email" placeholder="Your Email" required class="border rounded px-4 py-2">
+      <textarea name="message" placeholder="Your Message" required class="border rounded px-4 py-2"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 [Your Name]. All rights reserved.
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- Main JS -->
+  <script src="main.js"></script>
+</body>
+</html>
