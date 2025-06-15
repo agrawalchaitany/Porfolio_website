@@ -1,379 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Alex Rodriguez Portfolio</title>
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Alex Rodriguez - Data Scientist Portfolio</title>
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6, #1e40af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .tech-tag {
+      transition: all 0.2s ease;
+    }
+    .tech-tag:hover {
+      transform: scale(1.05);
+    }
+    .progress-bar {
+      background: linear-gradient(90deg, #3b82f6, #1e40af);
+      border-radius: 9999px;
+      height: 6px;
+      transition: width 2s ease-in-out;
+    }
+  </style>
 </head>
-<body class="font-inter bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900 min-h-screen flex flex-col">    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
-        <a href="index.html" class="text-2xl font-bold text-blue-700">Alex Rodriguez</a>
-        <nav class="space-x-6">
-            <a href="about.html" class="hover:text-blue-600">About</a>
-            <a href="projects.html" class="text-blue-600 font-semibold">Projects</a>
-            <a href="contact.html" class="hover:text-blue-600">Contact</a>
+<body class="font-inter bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen text-gray-900 antialiased">  <!-- Header -->
+  <header class="backdrop-blur-lg bg-white/70 border-b border-white/20 sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold gradient-text">Alex Rodriguez</a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="about.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">About</a>
+          <a href="projects.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Projects</a>
+          <a href="index.html#certifications" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Certifications</a>
+          <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium">Contact</a>
         </nav>
-    </header>    <main class="flex-1 container mx-auto px-4 py-16">
-        <!-- Projects Section -->
-        <section class="mb-16" data-aos="fade-up">
-            <h1 class="text-3xl font-bold mb-8 text-blue-700 text-center">My Projects</h1>
-            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <!-- Mobile menu button -->
+        <button class="md:hidden p-2" onclick="toggleMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-16">
+    <!-- Hero Section -->
+    <section class="text-center mb-16" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6">
+        My <span class="gradient-text">Projects</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        A showcase of data science projects that demonstrate my expertise in Python, machine learning, and data visualization
+      </p>
+    </section>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
                 <!-- Sales Data Dashboard -->
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-100" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                            </svg>
-                        </div>
-                        <div class="absolute top-4 right-4">
-                            <span class="bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs">Featured</span>
-                        </div>
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="100">
+                  <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative overflow-hidden p-6 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-white/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <div class="absolute top-4 right-4">
+                      <span class="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">Featured</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors">Sales Data Dashboard</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Interactive dashboard built with Python, Pandas, and Matplotlib for visualizing sales trends and KPIs. Features comprehensive data cleaning and statistical analysis.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">Python</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">Pandas</span>
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">Matplotlib</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold flex items-center transition-colors">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors">Sales Data Dashboard</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Interactive dashboard built with Python, Pandas, and Matplotlib for visualizing sales trends and KPIs. Features comprehensive data cleaning and statistical analysis with real-time insights.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="tech-tag px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">Python</span>
+                      <span class="tech-tag px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">Pandas</span>
+                      <span class="tech-tag px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium">Matplotlib</span>
                     </div>
+                    <div class="flex items-center justify-between">
+                      <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Machine Learning Model -->
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-100" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
+                <!-- Customer Segmentation Model -->
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="200">
+                  <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 relative overflow-hidden p-6 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-white/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors">Customer Segmentation Model</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Machine learning model using K-means clustering to segment customers based on purchasing behavior. Implemented with Scikit-learn for targeted marketing strategies.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="tech-tag px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full font-medium">Python</span>
+                      <span class="tech-tag px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full font-medium">Scikit-learn</span>
+                      <span class="tech-tag px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full font-medium">K-means</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors">Customer Prediction Model</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Machine learning classifier using Scikit-learn to predict customer behavior. Implemented advanced data preprocessing, feature engineering, and model evaluation.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full font-medium">Python</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full font-medium">Scikit-learn</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full font-medium">NumPy</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-purple-600 hover:text-purple-700 font-semibold flex items-center transition-colors">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="flex items-center justify-between">
+                      <a href="#" class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold transition-colors group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
                     </div>
+                  </div>
                 </div>
 
                 <!-- Database Management System -->
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-100" data-aos="fade-up" data-aos-delay="300">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
-                            </svg>
-                        </div>
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="300">
+                  <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 relative overflow-hidden p-6 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-white/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                    </svg>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 group-hover:text-green-600 transition-colors">Database Management System</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive database design and optimization project using MySQL. Features normalized schemas, complex queries, and performance optimization for large datasets.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="tech-tag px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full font-medium">MySQL</span>
+                      <span class="tech-tag px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full font-medium">Database Design</span>
+                      <span class="tech-tag px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full font-medium">Optimization</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-green-600 transition-colors">Inventory Management DB</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Comprehensive MySQL database design for inventory tracking with optimized queries and automated reporting features using MySQL Workbench.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full font-medium">MySQL</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full font-medium">SQL</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full font-medium">Database Design</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-green-600 hover:text-green-700 font-semibold flex items-center transition-colors">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="flex items-center justify-between">
+                      <a href="#" class="inline-flex items-center text-green-600 hover:text-green-700 font-semibold transition-colors group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
                     </div>
+                  </div>
                 </div>
 
-                <!-- Time Series Analysis -->
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-100" data-aos="fade-up" data-aos-delay="400">
-                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
-                            </svg>
-                        </div>
+                <!-- Stock Price Predictor -->
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="400">
+                  <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-600 relative overflow-hidden p-6 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-white/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 group-hover:text-indigo-600 transition-colors">Stock Price Predictor</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Advanced time series forecasting model using LSTM neural networks to predict stock prices. Incorporates technical indicators and sentiment analysis for enhanced accuracy.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="tech-tag px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full font-medium">Python</span>
+                      <span class="tech-tag px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full font-medium">LSTM</span>
+                      <span class="tech-tag px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full font-medium">TensorFlow</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">Time Series Forecasting</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Advanced time series analysis for stock price prediction using ARIMA models and seasonal decomposition with statistical validation.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full font-medium">Python</span>
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full font-medium">ARIMA</span>
-                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full font-medium">Statsmodels</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-orange-600 hover:text-orange-700 font-semibold flex items-center transition-colors">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="flex items-center justify-between">
+                      <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold transition-colors group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
                     </div>
+                  </div>
                 </div>
 
-                <!-- NLP Text Analysis -->
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-100" data-aos="fade-up" data-aos-delay="500">
-                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
-                            </svg>
-                        </div>
+                <!-- Web Scraping Tool -->
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="500">
+                  <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 relative overflow-hidden p-6 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-white/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 group-hover:text-orange-600 transition-colors">Web Scraping Tool</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Automated data collection tool using Beautiful Soup and Selenium. Efficiently extracts and processes large datasets from multiple web sources with robust error handling.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="tech-tag px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full font-medium">Python</span>
+                      <span class="tech-tag px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full font-medium">Beautiful Soup</span>
+                      <span class="tech-tag px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full font-medium">Selenium</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-indigo-600 transition-colors">Sentiment Analysis Tool</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Natural language processing application for sentiment analysis of social media data using NLTK and TextBlob with real-time classification.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full font-medium">Python</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full font-medium">NLTK</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full font-medium">TextBlob</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center transition-colors">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="flex items-center justify-between">
+                      <a href="#" class="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold transition-colors group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
                     </div>
+                  </div>
                 </div>
 
-                <!-- Web Scraping Project -->
-                <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-blue-100" data-aos="fade-up" data-aos-delay="600">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-red-600 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9a9 9 0 01-9-9m9 9c0-9-9-9-9-9"></path>
-                            </svg>
-                        </div>
+                <!-- Data Visualization Suite -->
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="600">
+                  <div class="h-48 bg-gradient-to-br from-pink-500 to-pink-600 relative overflow-hidden p-6 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-white/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                    </svg>
+                  </div>
+                  <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 group-hover:text-pink-600 transition-colors">Data Visualization Suite</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Interactive visualization platform built with Plotly and Streamlit. Features dynamic charts, real-time data updates, and comprehensive analytics dashboard for business intelligence.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                      <span class="tech-tag px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-full font-medium">Python</span>
+                      <span class="tech-tag px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-full font-medium">Plotly</span>
+                      <span class="tech-tag px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-full font-medium">Streamlit</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800 group-hover:text-red-600 transition-colors">E-commerce Data Scraper</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed">Automated web scraping solution using BeautifulSoup and Selenium for collecting product data with price monitoring and trend analysis.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full font-medium">Python</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full font-medium">BeautifulSoup</span>
-                            <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full font-medium">Selenium</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="text-red-600 hover:text-red-700 font-semibold flex items-center transition-colors">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                        </div>
+                    <div class="flex items-center justify-between">
+                      <a href="#" class="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold transition-colors group">
+                        View Project 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </a>
+                      <a href="#" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                      </a>
                     </div>
+                  </div>
                 </div>
             </div>
         </section>
 
         <!-- Certificates Section -->
-        <section class="mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-8 text-blue-700 text-center">Certifications & Achievements</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Python Data Science Certificate -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-100" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 mb-1">Python for Data Science</h3>
-                            <p class="text-sm text-blue-600 font-medium">IBM Data Science Professional</p>
-                            <p class="text-xs text-gray-500 mt-1">Issued: March 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-3">Comprehensive certification covering Python programming, data manipulation with Pandas, and machine learning fundamentals.</p>
-                    <a href="#" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
-                        View Certificate
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
+        <section id="certifications" class="mb-20" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4 gradient-text">Professional Certifications</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Continuously advancing my expertise through industry-recognized certifications
+            </p>
+          </div>
+          
+          <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            <!-- Python Data Science Certification -->
+            <div class="glass-effect rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
                 </div>
-
-                <!-- Machine Learning Certificate -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-100" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 mb-1">Machine Learning Specialization</h3>
-                            <p class="text-sm text-purple-600 font-medium">Stanford University (Coursera)</p>
-                            <p class="text-xs text-gray-500 mt-1">Issued: January 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-3">Advanced machine learning algorithms, neural networks, and deep learning techniques with practical applications.</p>
-                    <a href="#" class="text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center">
-                        View Certificate
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
+                <span class="text-sm text-gray-500 font-medium">2024</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Python Data Science Professional</h3>
+              <p class="text-gray-600 mb-4">IBM Data Science Professional Certificate covering Python, SQL, machine learning, and data visualization.</p>
+              <div class="mb-4">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="font-medium">Progress</span>
+                  <span class="text-gray-600">100%</span>
                 </div>
-
-                <!-- SQL Database Certificate -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-100" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 mb-1">MySQL Database Administration</h3>
-                            <p class="text-sm text-green-600 font-medium">Oracle MySQL Certification</p>
-                            <p class="text-xs text-gray-500 mt-1">Issued: February 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-3">Database design, optimization, query performance tuning, and advanced MySQL administration techniques.</p>
-                    <a href="#" class="text-green-600 hover:text-green-700 text-sm font-medium flex items-center">
-                        View Certificate
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
+                <div class="bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar w-full"></div>
                 </div>
-
-                <!-- Data Visualization Certificate -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-100" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 mb-1">Data Visualization with Python</h3>
-                            <p class="text-sm text-orange-600 font-medium">DataCamp Professional</p>
-                            <p class="text-xs text-gray-500 mt-1">Issued: April 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-3">Advanced data visualization techniques using Matplotlib, Seaborn, and Plotly for creating impactful dashboards.</p>
-                    <a href="#" class="text-orange-600 hover:text-orange-700 text-sm font-medium flex items-center">
-                        View Certificate
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Statistics Certificate -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-100" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 mb-1">Statistical Analysis</h3>
-                            <p class="text-sm text-indigo-600 font-medium">Duke University (Coursera)</p>
-                            <p class="text-xs text-gray-500 mt-1">Issued: December 2023</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-3">Comprehensive statistical methods, hypothesis testing, regression analysis, and inferential statistics.</p>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
-                        View Certificate
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Google Analytics Certificate -->
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-100" data-aos="fade-up" data-aos-delay="600">
-                    <div class="flex items-start mb-4">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 mb-1">Google Analytics Certified</h3>
-                            <p class="text-sm text-red-600 font-medium">Google Analytics Academy</p>
-                            <p class="text-xs text-gray-500 mt-1">Issued: May 2024</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-3">Web analytics, data tracking, conversion optimization, and advanced Google Analytics reporting techniques.</p>
-                    <a href="#" class="text-red-600 hover:text-red-700 text-sm font-medium flex items-center">
-                        View Certificate
-                        <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
-                </div>
+              </div>
+              <div class="flex items-center text-blue-600 font-semibold">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                </svg>
+                Certified
+              </div>
             </div>
+
+            <!-- AWS Cloud Practitioner -->
+            <div class="glass-effect rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-gray-500 font-medium">2024</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">AWS Cloud Practitioner</h3>
+              <p class="text-gray-600 mb-4">Amazon Web Services foundational certification covering cloud concepts, services, and deployment.</p>
+              <div class="mb-4">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="font-medium">Progress</span>
+                  <span class="text-gray-600">100%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar w-full"></div>
+                </div>
+              </div>
+              <div class="flex items-center text-orange-600 font-semibold">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                </svg>
+                Certified
+              </div>
+            </div>
+
+            <!-- Google Analytics -->
+            <div class="glass-effect rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-gray-500 font-medium">2023</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Google Analytics Professional</h3>
+              <p class="text-gray-600 mb-4">Advanced analytics certification covering data collection, analysis, and reporting strategies.</p>
+              <div class="mb-4">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="font-medium">Progress</span>
+                  <span class="text-gray-600">100%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar w-full"></div>
+                </div>
+              </div>
+              <div class="flex items-center text-green-600 font-semibold">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                </svg>
+                Certified
+              </div>
+            </div>
+
+            <!-- Microsoft Azure -->
+            <div class="glass-effect rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="400">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-gray-500 font-medium">2023</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Azure Data Fundamentals</h3>
+              <p class="text-gray-600 mb-4">Microsoft Azure certification focusing on data concepts, services, and analytics workloads.</p>
+              <div class="mb-4">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="font-medium">Progress</span>
+                  <span class="text-gray-600">100%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar w-full"></div>
+                </div>
+              </div>
+              <div class="flex items-center text-blue-600 font-semibold">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                </svg>
+                Certified
+              </div>
+            </div>
+
+            <!-- Tableau Desktop -->
+            <div class="glass-effect rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="500">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-gray-500 font-medium">2023</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Tableau Desktop Specialist</h3>
+              <p class="text-gray-600 mb-4">Professional certification in data visualization and business intelligence using Tableau Desktop.</p>
+              <div class="mb-4">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="font-medium">Progress</span>
+                  <span class="text-gray-600">100%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar w-full"></div>
+                </div>
+              </div>
+              <div class="flex items-center text-purple-600 font-semibold">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                </svg>
+                Certified
+              </div>
+            </div>
+
+            <!-- Machine Learning Specialization -->
+            <div class="glass-effect rounded-3xl p-8 card-hover" data-aos="fade-up" data-aos-delay="600">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                  </svg>
+                </div>
+                <span class="text-sm text-gray-500 font-medium">2022</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">ML Specialization - Stanford</h3>
+              <p class="text-gray-600 mb-4">Comprehensive machine learning specialization covering algorithms, neural networks, and practical applications.</p>
+              <div class="mb-4">
+                <div class="flex justify-between text-sm mb-2">
+                  <span class="font-medium">Progress</span>
+                  <span class="text-gray-600">100%</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2">
+                  <div class="progress-bar w-full"></div>
+                </div>
+              </div>
+              <div class="flex items-center text-indigo-600 font-semibold">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
+                </svg>
+                Certified
+              </div>
+            </div>
+          </div>
         </section>
-    </main><footer class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-        &copy; 2025 Alex Rodriguez. All rights reserved.
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    </main>  <!-- Footer -->
+  <footer class="backdrop-blur-lg bg-white/70 border-t border-white/20 py-8">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <p class="text-gray-600">&copy; 2025 Alex Rodriguez. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="main.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      // Add mobile menu functionality if needed
+    }
+
+    // Animate progress bars on scroll
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = '100%';
+        }
+      });
+    });
+
+    progressBars.forEach(bar => observer.observe(bar));
+  </script>
 </body>
 </html>
